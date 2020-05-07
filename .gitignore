@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/314425 ch05 code/Generics/GenericsSamples/.vs/GenericsSamples/v16
+/314425 ch05 code/Generics/GenericsSamples/DocumentManager/bin/Debug
+/314425 ch05 code/Generics/GenericsSamples/DocumentManager/obj/x86/Debug
+/314425 ch05 code/Generics/GenericsSamples/GenericMethods/bin/Debug
+/314425 ch05 code/Generics/GenericsSamples/GenericMethods/obj/x86/Debug
+/314425 ch05 code/Generics/GenericsSamples/LinkedListObjects/bin/Debug
+/314425 ch05 code/Generics/GenericsSamples/LinkedListObjects/obj/x86/Debug
+/314425 ch05 code/Generics/GenericsSamples/LinkedListSample/bin/Debug
+/314425 ch05 code/Generics/GenericsSamples/LinkedListSample/obj/x86/Debug
+/314425 ch05 code/Generics/GenericsSamples/Specialization/bin/Debug
+/314425 ch05 code/Generics/GenericsSamples/Specialization/obj/x86/Debug
+/314425 ch05 code/Generics/GenericsSamples/Variance/bin/Debug
+/314425 ch05 code/Generics/GenericsSamples/Variance/obj/x86/Debug
+Debug
