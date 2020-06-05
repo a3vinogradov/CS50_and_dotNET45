@@ -18,7 +18,7 @@ namespace _06_AsyncDataReaders
             {
                 var t1 = GetEmployeeCount();
                 var t2 = GetOrderCount();
-
+                Console.WriteLine("Executing queries...");
                 Task.WaitAll(t1, t2);
                 Console.WriteLine("Number of employes: {0}, Number of orders: {1}", t1.Result, t2.Result);
             }, 1, "Getting data took {1}ms");
@@ -56,9 +56,14 @@ namespace _06_AsyncDataReaders
 
         private static string GetDatabaseConnection()
         {
-            return "server=(local);" +
-                "integrated security=SSPI;" +
-                "database=Northwind";
+            return "server=DARK\\SQLEXPRESS;" +
+                    "integrated security=SSPI;" +
+                    "database=Northwind";
+            //return "server=(local);" +
+            //    "integrated security=SSPI;" +
+            //    "database=Northwind";
+
+            
         }
 
     }

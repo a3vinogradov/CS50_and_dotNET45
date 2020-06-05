@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Configuration;
 
 namespace _01_ExecutingCommands
 {
@@ -21,8 +23,8 @@ namespace _01_ExecutingCommands
         static void ExecuteNonQuery()
         {
             string select = "UPDATE Customers " +
-                            "SET ContactName = 'Bob' " +
-                            "WHERE ContactName = 'Bill'";
+                            "SET ContactName = 'Bill' " +
+                            "WHERE ContactName = 'Bob'";
             SqlConnection conn = new SqlConnection(GetDatabaseConnection());
             conn.Open();
             SqlCommand cmd = new SqlCommand(select, conn);
@@ -59,7 +61,9 @@ namespace _01_ExecutingCommands
         {
             string select = "SELECT ContactName,CompanyName " +
                             "FROM Customers FOR XML AUTO";
-            SqlConnection conn = new SqlConnection(GetDatabaseConnection());
+            //SqlConnection conn = new SqlConnection(GetDatabaseConnection());
+            DbConnection conn1 = GetDatabaseConnection("Northwind");
+            SqlConnection conn = conn1 as SqlConnection;
             conn.Open();
             SqlCommand cmd = new SqlCommand(select, conn);
             XmlReader xr = cmd.ExecuteXmlReader();
@@ -77,9 +81,18 @@ namespace _01_ExecutingCommands
 
         static string GetDatabaseConnection()
         {
-            return "server=(local);" +
+            return "server=DARK\\SQLEXPRESS;" +
                 "integrated security=SSPI;" +
                 "database=Northwind";
         }
+        static DbConnection GetDatabaseConnection(string name)
+        {
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[name];
+            DbProviderFactory factory = DbProviderFactories.GetFactory(settings.ProviderName);
+            DbConnection conn = factory.CreateConnection();
+            conn.ConnectionString = settings.ConnectionString;
+            return conn;
+        }
+
     }
 }

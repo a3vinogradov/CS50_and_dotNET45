@@ -28,9 +28,12 @@ namespace _10_XSDDataset
 
         private static string GetDatabaseConnection()
         {
-            return "server=(local);" +
-                "integrated security=SSPI;" +
-                "database=Northwind";
+            //return "server=(local);" +
+            //    "integrated security=SSPI;" +
+            //    "database=Northwind";
+            return "server=DARK\\SQLEXPRESS;" +
+                   "integrated security=SSPI;" +
+                   "database=Northwind";
         }
     }
 }

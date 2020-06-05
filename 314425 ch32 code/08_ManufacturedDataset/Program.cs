@@ -111,7 +111,10 @@ namespace _08_ManufacturedDataset
 
         private static string GetDatabaseConnection()
         {
-            return "server=(local);" +
+            //return "server=(local);" +
+            //    "integrated security=SSPI;" +
+            //    "database=Northwind";
+            return "server=DARK\\SQLEXPRESS;" +
                 "integrated security=SSPI;" +
                 "database=Northwind";
         }

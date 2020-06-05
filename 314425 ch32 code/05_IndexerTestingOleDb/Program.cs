@@ -61,7 +61,10 @@ namespace _05_IndexerTestingOleDb
 
         private static string GetDatabaseConnection()
         {
-            return "server=(local);" +
+            //return "server=(local);" +
+            //    "integrated security=SSPI;" +
+            //    "database=Northwind";
+            return "server=DARK\\SQLEXPRESS;" +
                 "integrated security=SSPI;" +
                 "database=Northwind";
         }

@@ -33,9 +33,12 @@ namespace _03_DataReaderOledb
 
         private static string GetDatabaseConnection()
         {
-            return "server=(local);" +
-                "integrated security=SSPI;" +
-                "database=Northwind";
+            //return "server=(local);" +
+            //    "integrated security=SSPI;" +
+            //    "database=Northwind";
+            return "server=DARK\\SQLEXPRESS;" +
+                    "integrated security=SSPI;" +
+                    "database=Northwind";
         }
 
     }

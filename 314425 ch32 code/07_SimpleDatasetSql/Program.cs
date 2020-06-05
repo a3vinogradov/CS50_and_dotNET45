@@ -33,9 +33,12 @@ namespace _07_SimpleDatasetSql
 
         private static string GetDatabaseConnection()
         {
-            return "server=(local);" +
+            return "server=DARK\\SQLEXPRESS;" + 
                 "integrated security=SSPI;" +
                 "database=Northwind";
+            //return "server=(local);" +
+            //    "integrated security=SSPI;" +
+            //    "database=Northwind";
         }
 
     }
