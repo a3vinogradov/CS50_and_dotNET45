@@ -6,7 +6,7 @@ namespace Wrox.ProCSharp.Delegates
   {
     static void Main()
     {
-      // SimpleDemos();
+       SimpleDemos();
 
       int someVal = 5;
       Func<int, int> f = x => x + someVal;
